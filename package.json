@@ -1,0 +1,35 @@
+{
+  "name": "PROJECT_INVOICE-2",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/postgres": "^1.10.0",
+    "@sap-cloud-sdk/http-client": "^3.19.0",
+    "@sap-cloud-sdk/resilience": "^3.19.0",
+    "@sap/cds": "^7",
+    "express": "^4",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.17"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-billing": "cds watch --open billing/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "API_BILLING_DOCUMENT_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BILLING_DOCUMENT_SRV"
+      }
+    }
+  },
+  "sapux": [
+    "app/billing"
+  ]
+}
